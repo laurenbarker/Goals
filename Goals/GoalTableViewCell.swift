@@ -17,13 +17,14 @@ class GoalTableViewCell: UITableViewCell {
     var previousStepperValue: Int = 0
     
     @IBAction func updateValue(sender: UIStepper) {
+        var newValue: NSNumber
         
-        print(goalTitle.text)
         if previousStepperValue < Int(sender.value) {
-            GoalTableViewController().updateGoal(goalTitle.text!, action: "increase")
+            newValue = GoalTableViewController().updateGoal(goalTitle.text!, action: "increase")
         } else {
-            GoalTableViewController().updateGoal(goalTitle.text!, action: "decrease")
+            newValue = GoalTableViewController().updateGoal(goalTitle.text!, action: "decrease")
         }
+        goalGoal.text = String(newValue)
     }
     
     override func awakeFromNib() {

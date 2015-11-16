@@ -35,6 +35,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let widthConstraint = NSLayoutConstraint(item:self.contentView,
             attribute: NSLayoutAttribute.Width,
             relatedBy:NSLayoutRelation.Equal,

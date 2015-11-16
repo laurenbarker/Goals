@@ -44,9 +44,13 @@ class GoalTableViewController: UITableViewController {
 
         // Configure the cell...
         let goal = goals[indexPath.row]
-        cell.goalTitle.text = goal.title
+        cell.goalTitle.text = goal.title + " per " + goal.interval
         cell.goalUnit.text = goal.unit
-        cell.goalGoal.text = String(goal.goal)
+        cell.goalGoal.text = String(goal.current)
+        
+        if Double(goal.current.doubleValue) >= Double(goal.goal.doubleValue) {
+            cell.backgroundColor = UIColor.greenColor();
+        }
 
         return cell
     }
@@ -75,6 +79,45 @@ class GoalTableViewController: UITableViewController {
             print(error)
         }
 
+    }
+    
+    func updateGoal(title: String, action: String) {
+        let fetchRequest = NSFetchRequest(entityName: "Goals")
+        
+        var titleValue = title.componentsSeparatedByString(" per")
+        let predicate = NSPredicate(format: "title == %@", titleValue[0])
+        
+        fetchRequest.predicate = predicate
+        
+        
+        
+        /* And execute the fetch request on the context */
+        do {
+            let goalArray = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Goal]
+            let goal = goalArray[0]
+                
+                print("Title = \(goal.title)")
+                print("Goal = \(goal.goal)")
+                print("Increment = \(goal.increment)")
+                print("Current = \(goal.current)")
+            
+            if action == "increase" {
+                goal.current = Double(goal.current.doubleValue) + Double(goal.increment.doubleValue)
+            } else {
+                goal.current = Double(goal.current.doubleValue) - Double(goal.increment.doubleValue)
+            }
+            
+            do{
+                try managedObjectContext.save()
+            } catch let error as NSError{
+                print("Failed to save the new goal. Error = \(error)")
+            }
+ 
+            
+        } catch let error as NSError{
+            print(error)
+        }
+        
     }
     
 

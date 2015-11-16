@@ -11,20 +11,17 @@
             <objects>
                 <tableViewController id="kc3-eo-e9j" customClass="GoalTableViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="Inx-pg-EZN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoalTableViewCell" id="xL3-DH-0vg" customClass="GoalTableViewCell" customModule="Goals" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xL3-DH-0vg" id="zoR-Dh-b7R">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="900000000" translatesAutoresizingMaskIntoConstraints="NO" id="xZ2-Qu-9iu">
-                                            <rect key="frame" x="47" y="42" width="94" height="29"/>
-                                        </stepper>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdC-wM-8i6">
                                             <rect key="frame" x="181" y="39" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -46,6 +43,12 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-900000000" maximumValue="900000000" translatesAutoresizingMaskIntoConstraints="NO" id="xZ2-Qu-9iu">
+                                            <rect key="frame" x="47" y="42" width="94" height="29"/>
+                                            <connections>
+                                                <action selector="updateValue:" destination="xL3-DH-0vg" eventType="valueChanged" id="78k-PN-LOh"/>
+                                            </connections>
+                                        </stepper>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="AFl-3s-bnx" firstAttribute="baseline" secondItem="3yn-ZS-Mcf" secondAttribute="baseline" id="46H-SQ-x7K"/>
@@ -59,7 +62,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="goalControl" destination="xZ2-Qu-9iu" id="mMe-ia-zPv"/>
                                     <outlet property="goalGoal" destination="3yn-ZS-Mcf" id="gPI-Yf-Ral"/>
                                     <outlet property="goalTitle" destination="EdC-wM-8i6" id="6cn-pw-83L"/>
                                     <outlet property="goalUnit" destination="AFl-3s-bnx" id="baL-ig-yde"/>
@@ -78,6 +80,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81U-VG-vGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -238,21 +241,37 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Goal" id="2lL-aW-Q2N">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="7bI-Bh-1G2">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EHE-7J-VlL">
+                        <barButtonItem key="leftBarButtonItem" id="7bI-Bh-1G2">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="EHE-7J-VlL">
                                 <rect key="frame" x="16" y="7" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Cancel">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <segue destination="5oo-lA-63M" kind="show" identifier="cancelSegue" id="hjp-ZG-EQR"/>
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="AZo-nM-q5c">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cOv-eS-QEB">
+                        <barButtonItem key="rightBarButtonItem" id="AZo-nM-q5c">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="cOv-eS-QEB">
                                 <rect key="frame" x="270" y="7" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Save">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
                                     <segue destination="5oo-lA-63M" kind="show" identifier="addGoalSegue" id="rTU-oA-jbZ"/>
                                 </connections>

@@ -12,8 +12,19 @@ class GoalTableViewCell: UITableViewCell {
 
     @IBOutlet weak var goalTitle: UILabel!
     @IBOutlet weak var goalGoal: UILabel!
-    @IBOutlet weak var goalControl: UIStepper!
     @IBOutlet weak var goalUnit: UILabel!
+    
+    var previousStepperValue: Int = 0
+    
+    @IBAction func updateValue(sender: UIStepper) {
+        
+        print(goalTitle.text)
+        if previousStepperValue < Int(sender.value) {
+            GoalTableViewController().updateGoal(goalTitle.text!, action: "increase")
+        } else {
+            GoalTableViewController().updateGoal(goalTitle.text!, action: "decrease")
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

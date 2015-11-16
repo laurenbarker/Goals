@@ -19,18 +19,4 @@ class Goal: NSManagedObject{
     @NSManaged var interval: String;
     @NSManaged var current: NSNumber;
     
-//    init?(title: String, goal: NSNumber, unit: String, increment: NSNumber, interval: String) {
-//        
-//        self.title = title
-//        self.goal = goal
-//        self.unit = unit
-//        self.increment = increment
-//        self.interval = interval
-//        self.current = 0
-//        
-//        if title.isEmpty {
-//            return nil
-//        }
-//    }
-    
 }

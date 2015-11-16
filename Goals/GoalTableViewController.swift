@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class GoalTableViewController: UITableViewController {
+    @IBOutlet weak var updateTable: UITableView!
+    
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     var goals = [Goal]()
@@ -112,12 +114,10 @@ class GoalTableViewController: UITableViewController {
             } catch let error as NSError{
                 print("Failed to save the new goal. Error = \(error)")
             }
- 
             
         } catch let error as NSError{
             print(error)
         }
-        
     }
     
 

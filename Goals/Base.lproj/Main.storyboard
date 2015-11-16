@@ -81,10 +81,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="updateTable" destination="Inx-pg-EZN" id="4eK-QX-ICD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81U-VG-vGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="691" y="356"/>
+            <point key="canvasLocation" x="691" y="307"/>
         </scene>
         <!--New Goal-->
         <scene sceneID="2JZ-bm-ixF">

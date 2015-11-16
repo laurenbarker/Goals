@@ -74,11 +74,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Goals" id="YDq-Al-0ol">
-                        <barButtonItem key="leftBarButtonItem" title="Location" id="zKm-YU-rwV">
-                            <connections>
-                                <segue destination="n7c-lr-DvW" kind="show" id="9JT-Ad-Wbg"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TIO-60-rRn">
                             <connections>
                                 <segue destination="TP4-8d-8Hb" kind="show" id="sNU-kB-yja"/>
@@ -110,7 +105,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" restorationIdentifier="contentView" translatesAutoresizingMaskIntoConstraints="NO" id="Giw-Hx-afd" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="282"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="317"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5V-Vw-L9l">
                                                 <rect key="frame" x="27" y="21" width="38" height="21"/>
@@ -192,6 +187,13 @@
                                                     <outlet property="delegate" destination="TP4-8d-8Hb" id="WXY-iu-8Lm"/>
                                                 </connections>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLD-hC-Aoj">
+                                                <rect key="frame" x="27" y="279" width="59" height="30"/>
+                                                <state key="normal" title="Location"/>
+                                                <connections>
+                                                    <segue destination="n7c-lr-DvW" kind="show" id="BR3-w1-T8n"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -220,8 +222,8 @@
                                             <constraint firstItem="7za-V9-9oi" firstAttribute="leading" secondItem="cxq-K1-93z" secondAttribute="leading" id="lZb-cn-Xpc"/>
                                             <constraint firstItem="nJs-4D-LFd" firstAttribute="leading" secondItem="Giw-Hx-afd" secondAttribute="leading" constant="25" id="mqS-HJ-X1v"/>
                                             <constraint firstItem="pMb-Nd-Wys" firstAttribute="leading" secondItem="KFJ-lU-aqj" secondAttribute="trailing" constant="-1" id="p0x-1Q-Y22"/>
-                                            <constraint firstAttribute="height" constant="282" id="q7F-Ii-bqE"/>
-                                            <constraint firstItem="nJs-4D-LFd" firstAttribute="centerY" secondItem="Giw-Hx-afd" secondAttribute="centerY" constant="2.5" id="rLq-Hv-1cQ"/>
+                                            <constraint firstAttribute="height" constant="317" id="q7F-Ii-bqE"/>
+                                            <constraint firstItem="nJs-4D-LFd" firstAttribute="centerY" secondItem="Giw-Hx-afd" secondAttribute="centerY" constant="-15" id="rLq-Hv-1cQ"/>
                                             <constraint firstItem="pMb-Nd-Wys" firstAttribute="baseline" secondItem="KFJ-lU-aqj" secondAttribute="baseline" constant="-1" id="reM-47-y1h"/>
                                             <constraint firstItem="uRe-xB-hPG" firstAttribute="baseline" secondItem="7za-V9-9oi" secondAttribute="baseline" id="rnM-fh-Rio"/>
                                             <constraint firstItem="uRe-xB-hPG" firstAttribute="leading" secondItem="Giw-Hx-afd" secondAttribute="leading" constant="25" id="rnp-xd-iUD"/>
@@ -232,7 +234,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Giw-Hx-afd" secondAttribute="bottom" constant="222" id="3Pd-6W-FXu"/>
+                                    <constraint firstAttribute="bottom" secondItem="Giw-Hx-afd" secondAttribute="bottom" constant="187" id="3Pd-6W-FXu"/>
                                     <constraint firstItem="Giw-Hx-afd" firstAttribute="top" secondItem="UcZ-MQ-1Yh" secondAttribute="top" id="IFe-9K-AEZ"/>
                                     <constraint firstItem="Giw-Hx-afd" firstAttribute="leading" secondItem="UcZ-MQ-1Yh" secondAttribute="leading" id="QyC-7F-Wgq"/>
                                     <constraint firstItem="Giw-Hx-afd" firstAttribute="centerX" secondItem="UcZ-MQ-1Yh" secondAttribute="centerX" constant="-20" id="cof-TX-Lnh"/>
@@ -243,11 +245,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UcZ-MQ-1Yh" firstAttribute="top" secondItem="YZx-gs-pb0" secondAttribute="bottom" id="X33-qT-oug"/>
-                            <constraint firstItem="HVf-bQ-vWE" firstAttribute="top" secondItem="UcZ-MQ-1Yh" secondAttribute="bottom" id="dGc-9v-d9h"/>
+                            <constraint firstItem="HVf-bQ-vWE" firstAttribute="top" secondItem="UcZ-MQ-1Yh" secondAttribute="bottom" constant="-44" id="dGc-9v-d9h"/>
                             <constraint firstAttribute="trailing" secondItem="UcZ-MQ-1Yh" secondAttribute="trailing" id="nda-Gr-Fs3"/>
                             <constraint firstItem="UcZ-MQ-1Yh" firstAttribute="leading" secondItem="nl0-G8-quQ" secondAttribute="leading" id="uFR-Hc-dnB"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Goal" id="2lL-aW-Q2N">
                         <barButtonItem key="leftBarButtonItem" id="7bI-Bh-1G2">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" id="EHE-7J-VlL">
@@ -286,6 +289,7 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="addGoal" destination="cOv-eS-QEB" id="BZ6-Pk-0dT"/>
@@ -380,6 +384,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="rTU-oA-jbZ"/>
-        <segue reference="Xxu-dw-g32"/>
+        <segue reference="BR3-w1-T8n"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -118,6 +118,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override func motionEnded(motion: UIEventSubtype,
+        withEvent event: UIEvent?) {
+            
+            if motion == .MotionShake{ 
+                
+                //Comment: to terminate app, do not use exit(0) bc that is logged as a crash.
+                UIControl().sendAction(Selector("suspend"), to: UIApplication.sharedApplication(),
+                    forEvent: nil)
+            }
+    }
+    
 
     /*
     // MARK: - Navigation

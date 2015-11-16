@@ -66,8 +66,7 @@ class GoalTableViewController: UITableViewController {
                 print("Unit = \(goal.unit)")
                 print("Increment = \(goal.increment)")
                 print("Interval = \(goal.interval)")
-                
-                //let goal1 = Goal(title: goal.title, goal: goal.goal, unit: goal.unit, increment: goal.increment,  interval: goal.interval, goal.current)
+       
                 goals.append(goal)
             }
             print("Goal count = \(goalCount)")
@@ -75,59 +74,22 @@ class GoalTableViewController: UITableViewController {
         } catch let error as NSError{
             print(error)
         }
-//        let goal1 = Goal(title: "Run", goal: 5.0, unit: "miles", increment: 1.0,  interval: "week")!
-//        
-//        let goal2 = Goal(title: "Study", goal: 10.0, unit: "hours", increment: 1.0,  interval: "week")!
-//        
-//        let goal3 = Goal(title: "Workout", goal: 4.0, unit: "hours", increment: 1.0,  interval: "week")!
-//        
-//        goals += [goal1, goal2, goal3]
+
     }
     
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func motionEnded(motion: UIEventSubtype,
+        withEvent event: UIEvent?) {
+            
+            if motion == .MotionShake{
+                
+                //Comment: to terminate app, do not use exit(0) bc that is logged as a crash.
+                
+                UIControl().sendAction(Selector("suspend"), to: UIApplication.sharedApplication(), forEvent: nil)
+            }
+            
+            
+            
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

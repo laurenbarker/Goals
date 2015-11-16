@@ -74,6 +74,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Goals" id="YDq-Al-0ol">
+                        <barButtonItem key="leftBarButtonItem" title="Location" id="zKm-YU-rwV">
+                            <connections>
+                                <segue destination="n7c-lr-DvW" kind="show" id="9JT-Ad-Wbg"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TIO-60-rRn">
                             <connections>
                                 <segue destination="TP4-8d-8Hb" kind="show" id="sNU-kB-yja"/>
@@ -87,7 +92,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81U-VG-vGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="691" y="307"/>
+            <point key="canvasLocation" x="1503" y="307"/>
         </scene>
         <!--New Goal-->
         <scene sceneID="2JZ-bm-ixF">
@@ -313,10 +318,68 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ZN-XJ-Vag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159" y="356"/>
+            <point key="canvasLocation" x="971" y="356"/>
+        </scene>
+        <!--Current Location-->
+        <scene sceneID="lI8-tK-KJU">
+            <objects>
+                <viewController storyboardIdentifier="LocationView" id="n7c-lr-DvW" customClass="LocationView" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SG6-Y3-lZT"/>
+                        <viewControllerLayoutGuide type="bottom" id="RBx-FG-g3V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9AK-os-qMo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjm-Gj-PI4">
+                                <rect key="frame" x="38" y="92" width="244" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xjm-Gj-PI4" firstAttribute="leading" secondItem="9AK-os-qMo" secondAttribute="leadingMargin" constant="22" id="2qE-ca-2tW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xjm-Gj-PI4" secondAttribute="trailing" constant="18" id="Mtq-1n-8CQ"/>
+                            <constraint firstItem="xjm-Gj-PI4" firstAttribute="top" secondItem="SG6-Y3-lZT" secondAttribute="bottom" constant="28" id="bVw-7C-S4T"/>
+                            <constraint firstItem="xjm-Gj-PI4" firstAttribute="centerX" secondItem="9AK-os-qMo" secondAttribute="centerX" id="n2L-uW-W7w"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Current Location" id="Cyi-2z-5b9"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="address" destination="xjm-Gj-PI4" id="7kG-No-8R3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ebs-f6-Gnd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="616" y="293"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WmN-cp-ju5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WFw-H3-c8K" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Wx-qX-7ek">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="n7c-lr-DvW" kind="relationship" relationship="rootViewController" id="Xxu-dw-g32"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dRo-R6-a47" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-193" y="-320"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="rTU-oA-jbZ"/>
+        <segue reference="Xxu-dw-g32"/>
     </inferredMetricsTieBreakers>
 </document>

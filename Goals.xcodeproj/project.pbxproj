@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011C983E1BF9C58B00341F30 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011C983D1BF9C58B00341F30 /* LocationView.swift */; };
 		01F219CC1BF4EB190009E5C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F219CB1BF4EB190009E5C8 /* AppDelegate.swift */; };
 		01F219D11BF4EB190009E5C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F219CF1BF4EB190009E5C8 /* Main.storyboard */; };
 		01F219D41BF4EB190009E5C8 /* Goals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01F219D21BF4EB190009E5C8 /* Goals.xcdatamodeld */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		011C983D1BF9C58B00341F30 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		01F219C81BF4EB190009E5C8 /* Goals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F219CB1BF4EB190009E5C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01F219D01BF4EB190009E5C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				01F219CF1BF4EB190009E5C8 /* Main.storyboard */,
 				01F21A021BF967250009E5C8 /* ViewController.swift */,
 				01F21A001BF55B0B0009E5C8 /* GoalTableViewController.swift */,
+				011C983D1BF9C58B00341F30 /* LocationView.swift */,
 				01F219FC1BF551430009E5C8 /* Goal.swift */,
 				01F219D51BF4EB190009E5C8 /* Assets.xcassets */,
 				01F219FE1BF551D80009E5C8 /* GoalTableViewCell.swift */,
@@ -271,6 +274,7 @@
 				01F219FD1BF551430009E5C8 /* Goal.swift in Sources */,
 				01F219CC1BF4EB190009E5C8 /* AppDelegate.swift in Sources */,
 				01F219FF1BF551D80009E5C8 /* GoalTableViewCell.swift in Sources */,
+				011C983E1BF9C58B00341F30 /* LocationView.swift in Sources */,
 				01F21A011BF55B0B0009E5C8 /* GoalTableViewController.swift in Sources */,
 				01F219D41BF4EB190009E5C8 /* Goals.xcdatamodeld in Sources */,
 			);
@@ -491,6 +495,7 @@
 				01F219F51BF4EB190009E5C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01F219F61BF4EB190009E5C8 /* Build configuration list for PBXNativeTarget "GoalsTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +504,7 @@
 				01F219F81BF4EB190009E5C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01F219F91BF4EB190009E5C8 /* Build configuration list for PBXNativeTarget "GoalsUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +513,7 @@
 				01F219FB1BF4EB190009E5C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

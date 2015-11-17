@@ -18,7 +18,7 @@ class GoalTableViewCell: UITableViewCell {
     
     @IBAction func updateValue(sender: UIStepper) {
         var newValue: [NSNumber]
-        
+
         if previousStepperValue < Int(sender.value) {
             newValue = GoalTableViewController().updateGoal(goalTitle.text!, action: "increase")
         } else {
@@ -31,6 +31,7 @@ class GoalTableViewCell: UITableViewCell {
         } else {
             self.backgroundColor = UIColor.greenColor();
         }
+        previousStepperValue = Int(sender.value)
     }
     
     override func awakeFromNib() {

@@ -24,6 +24,7 @@ class GoalTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = editButtonItem()
         
         goals = loadSampleGoals()
+
     }
 
     override func didReceiveMemoryWarning() {

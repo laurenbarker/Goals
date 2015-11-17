@@ -84,9 +84,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "addGoalSegue") {
             
+            
+            if (goalField.text == "" || titleField.text == "" || unitField.text == "" || incrementField.text == "" || intervalField.text == "" ){
+                
+                let alert = UIAlertController(title: "Incomplete Form", message: "One or more fields in the Goal form are empty. All fields must be complete to save a goal. ", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+            }
+            else {
+            
             createNewGoalWithTitle(titleField.text!, goal: Double(goalField.text!)!, unit: unitField.text!, increment: Double(incrementField.text!)!, interval: intervalField.text!)
             
-        }
+            }}
     }
     
     func createNewGoalWithTitle(title: String,
@@ -99,11 +109,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
             NSEntityDescription.insertNewObjectForEntityForName("Goals",
                 inManagedObjectContext: managedObjectContext) as! Goals.Goal
             
+        
+            
             (newGoal.title, newGoal.goal, newGoal.unit, newGoal.increment, newGoal.interval, newGoal.current) =
                 (title, goal, unit, increment, interval, 0)
             
+            
             do{
                 try managedObjectContext.save()
+                
+                
+                
             } catch let error as NSError{
                 print("Failed to save the new goal. Error = \(error)")
             }
@@ -129,6 +145,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     forEvent: nil)
             }
     }
+    
+    
+    
+//    let alert = UIAlertController(title: "Incomplete Form", message: "One or more fields in the Goal form are empty. All fields must be complete to save a goal. ", preferredStyle: UIAlertControllerStyle.Alert)
+//    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+//    self.presentViewController(alert, animated: true, completion: nil)
+    
     
 
     /*

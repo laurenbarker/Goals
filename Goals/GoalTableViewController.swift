@@ -118,14 +118,14 @@ class GoalTableViewController: UITableViewController {
 
     }
     
-    func updateGoal(title: String, action: String) -> NSNumber {
+    func updateGoal(title: String, action: String) -> [NSNumber] {
         let fetchRequest = NSFetchRequest(entityName: "Goals")
         
         var titleValue = title.componentsSeparatedByString(" per")
         let predicate = NSPredicate(format: "title == %@", titleValue[0])
         
         fetchRequest.predicate = predicate
-        var newValue: NSNumber
+        var newValue:[NSNumber] = [0, 0]
         
         /* And execute the fetch request on the context */
         do {
@@ -134,10 +134,12 @@ class GoalTableViewController: UITableViewController {
             
             if action == "increase" {
                 goal.current = Double(goal.current.doubleValue) + Double(goal.increment.doubleValue)
-                newValue = goal.current
+                newValue[0] = goal.current
+                newValue[1] = goal.goal
             } else {
                 goal.current = Double(goal.current.doubleValue) - Double(goal.increment.doubleValue)
-                newValue = goal.current
+                newValue[0] = goal.current
+                newValue[1] = goal.goal
             }
             
             do{
@@ -150,7 +152,7 @@ class GoalTableViewController: UITableViewController {
             
         } catch let error as NSError{
             print(error)
-            return 0
+            return [0]
         }
     }
     

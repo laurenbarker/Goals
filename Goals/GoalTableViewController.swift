@@ -24,31 +24,31 @@ class GoalTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = editButtonItem()
         
         goals = loadSampleGoals()
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return goals.count
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "GoalTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GoalTableViewCell
-
+        
         // Configure the cell...
         let goal = goals[indexPath.row]
         cell.goalTitle.text = goal.title + " per " + goal.interval
@@ -58,7 +58,7 @@ class GoalTableViewController: UITableViewController {
         if Double(goal.current.doubleValue) >= Double(goal.goal.doubleValue) {
             cell.backgroundColor = UIColor.greenColor();
         }
-
+        
         return cell
     }
     
@@ -107,7 +107,7 @@ class GoalTableViewController: UITableViewController {
                 print("Unit = \(goal.unit)")
                 print("Increment = \(goal.increment)")
                 print("Interval = \(goal.interval)")
-       
+                
                 goals.append(goal)
             }
             print("Goal count = \(goalCount)")
@@ -116,7 +116,7 @@ class GoalTableViewController: UITableViewController {
             print(error)
             return goals
         }
-
+        
     }
     
     func updateGoal(title: String, action: String) -> [NSNumber] {
@@ -157,7 +157,7 @@ class GoalTableViewController: UITableViewController {
         }
     }
     
-
+    
     override func motionEnded(motion: UIEventSubtype,
         withEvent event: UIEvent?) {
             
@@ -168,8 +168,25 @@ class GoalTableViewController: UITableViewController {
                 UIControl().sendAction(Selector("suspend"), to: UIApplication.sharedApplication(), forEvent: nil)
             }
             
-            
-            
     }
-
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        let name = "GoalView"
+        
+        // The UA-XXXXX-Y tracker ID is loaded automatically from the
+        // GoogleService-Info.plist by the `GGLContext` in the AppDelegate.
+        // If you're copying this to an app just using Analytics, you'll
+        // need to configure your tracking ID here.
+        // [START screen_view_hit_swift]
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: name)
+        
+        let eventTracker: NSObject = GAIDictionaryBuilder.createScreenView().build()
+        tracker.send(eventTracker as! [NSObject : AnyObject])
+        // [END screen_view_hit_swift]
+    }
+    
 }

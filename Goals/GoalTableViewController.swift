@@ -56,6 +56,7 @@ class GoalTableViewController: UITableViewController {
         cell.goalGoal.text = String(goal.current)
         
         if Double(goal.current.doubleValue) >= Double(goal.goal.doubleValue) {
+            Flurry.logEvent("Goal_Met");
             cell.backgroundColor = UIColor.greenColor();
         }
 

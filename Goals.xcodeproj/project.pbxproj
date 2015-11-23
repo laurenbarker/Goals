@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		011C983E1BF9C58B00341F30 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011C983D1BF9C58B00341F30 /* LocationView.swift */; };
+		01CFF5E41C038EFA00B905DE /* libFlurry_7.3.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CFF5E31C038EFA00B905DE /* libFlurry_7.3.0.a */; };
+		01CFF5E61C038F6300B905DE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CFF5E51C038F6300B905DE /* Security.framework */; };
+		01CFF5E81C038F7000B905DE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CFF5E71C038F7000B905DE /* SystemConfiguration.framework */; };
 		01F219CC1BF4EB190009E5C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F219CB1BF4EB190009E5C8 /* AppDelegate.swift */; };
 		01F219D11BF4EB190009E5C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01F219CF1BF4EB190009E5C8 /* Main.storyboard */; };
 		01F219D41BF4EB190009E5C8 /* Goals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01F219D21BF4EB190009E5C8 /* Goals.xcdatamodeld */; };
@@ -39,6 +42,11 @@
 
 /* Begin PBXFileReference section */
 		011C983D1BF9C58B00341F30 /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		01CFF5E21C038EFA00B905DE /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		01CFF5E31C038EFA00B905DE /* libFlurry_7.3.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_7.3.0.a; sourceTree = "<group>"; };
+		01CFF5E51C038F6300B905DE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		01CFF5E71C038F7000B905DE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		01CFF5EA1C038FFB00B905DE /* Goals-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Goals-Bridging-Header.h"; sourceTree = "<group>"; };
 		01F219C81BF4EB190009E5C8 /* Goals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F219CB1BF4EB190009E5C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01F219D01BF4EB190009E5C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01CFF5E81C038F7000B905DE /* SystemConfiguration.framework in Frameworks */,
+				01CFF5E61C038F6300B905DE /* Security.framework in Frameworks */,
+				01CFF5E41C038EFA00B905DE /* libFlurry_7.3.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +96,8 @@
 		01F219BF1BF4EB190009E5C8 = {
 			isa = PBXGroup;
 			children = (
+				01CFF5E71C038F7000B905DE /* SystemConfiguration.framework */,
+				01CFF5E51C038F6300B905DE /* Security.framework */,
 				01F219CA1BF4EB190009E5C8 /* Goals */,
 				01F219E21BF4EB190009E5C8 /* GoalsTests */,
 				01F219ED1BF4EB190009E5C8 /* GoalsUITests */,
@@ -105,6 +118,8 @@
 		01F219CA1BF4EB190009E5C8 /* Goals */ = {
 			isa = PBXGroup;
 			children = (
+				01CFF5E21C038EFA00B905DE /* Flurry.h */,
+				01CFF5E31C038EFA00B905DE /* libFlurry_7.3.0.a */,
 				01F219CB1BF4EB190009E5C8 /* AppDelegate.swift */,
 				01F219CF1BF4EB190009E5C8 /* Main.storyboard */,
 				01F21A021BF967250009E5C8 /* ViewController.swift */,
@@ -115,6 +130,7 @@
 				01F219FE1BF551D80009E5C8 /* GoalTableViewCell.swift */,
 				01F219DA1BF4EB190009E5C8 /* Info.plist */,
 				01F219D21BF4EB190009E5C8 /* Goals.xcdatamodeld */,
+				01CFF5EA1C038FFB00B905DE /* Goals-Bridging-Header.h */,
 			);
 			path = Goals;
 			sourceTree = "<group>";
@@ -412,8 +428,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Goals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Goals",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.cs4720.Goals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Goals/Goals-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -423,8 +444,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Goals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Goals",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.cs4720.Goals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Goals/Goals-Bridging-Header.h";
 			};
 			name = Release;
 		};

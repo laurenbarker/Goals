@@ -131,6 +131,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func addGoalAction(sender: AnyObject!) {
         
+        Flurry.logEvent("Goal_Created");
+        
         createNewGoalWithTitle(titleField.text!, goal: Double(goalField.text!)!, unit: unitField.text!, increment: Double(incrementField.text!)!, interval: intervalField.text!)
         
     }

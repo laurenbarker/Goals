@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5oo-lA-63M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5LM-FC-OaF">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Your Goals-->
@@ -74,11 +75,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Goals" id="YDq-Al-0ol">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TIO-60-rRn">
-                            <connections>
-                                <segue destination="TP4-8d-8Hb" kind="show" id="sNU-kB-yja"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="TIO-60-rRn">
+                                <connections>
+                                    <segue destination="TP4-8d-8Hb" kind="show" id="sNU-kB-yja"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Menu" id="mOV-aO-hRj">
+                                <connections>
+                                    <segue destination="OeJ-UJ-uVU" kind="show" id="jWR-UB-nDy"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -306,6 +314,54 @@
             </objects>
             <point key="canvasLocation" x="937" y="1015"/>
         </scene>
+        <!--MainMenu-->
+        <scene sceneID="Egs-Ke-14Q">
+            <objects>
+                <viewController title="MainMenu" id="OeJ-UJ-uVU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cGG-6h-MKe"/>
+                        <viewControllerLayoutGuide type="bottom" id="h2q-7X-XhV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lzv-id-MGI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kty-Di-EBB">
+                                <rect key="frame" x="141" y="155" width="39" height="30"/>
+                                <state key="normal" title="Goals"/>
+                                <connections>
+                                    <segue destination="kc3-eo-e9j" kind="show" id="2uy-60-swf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcO-hK-3Wc">
+                                <rect key="frame" x="129" y="215" width="63" height="30"/>
+                                <state key="normal" title="Analytics"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2N-Wo-gwU">
+                                <rect key="frame" x="131" y="269" width="59" height="30"/>
+                                <state key="normal" title="Location"/>
+                                <connections>
+                                    <segue destination="n7c-lr-DvW" kind="show" id="vqG-DS-JsR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RcO-hK-3Wc" firstAttribute="top" secondItem="Kty-Di-EBB" secondAttribute="bottom" constant="30" id="2NP-it-x0y"/>
+                            <constraint firstItem="Kty-Di-EBB" firstAttribute="centerX" secondItem="RcO-hK-3Wc" secondAttribute="centerX" id="JrO-JY-xVW"/>
+                            <constraint firstItem="P2N-Wo-gwU" firstAttribute="centerY" secondItem="Lzv-id-MGI" secondAttribute="centerY" id="MWK-MF-OxK"/>
+                            <constraint firstItem="P2N-Wo-gwU" firstAttribute="top" secondItem="RcO-hK-3Wc" secondAttribute="bottom" constant="24" id="MZF-7F-RMh"/>
+                            <constraint firstItem="P2N-Wo-gwU" firstAttribute="centerX" secondItem="Lzv-id-MGI" secondAttribute="centerX" id="PNP-bF-k5U"/>
+                            <constraint firstItem="P2N-Wo-gwU" firstAttribute="centerX" secondItem="RcO-hK-3Wc" secondAttribute="centerX" id="gDt-ns-iaA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Main Menu" id="qn0-uB-ejO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eBR-Gy-6A5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1977" y="1053"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="OxK-sF-VWY">
             <objects>
@@ -336,7 +392,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjm-Gj-PI4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjm-Gj-PI4">
                                 <rect key="frame" x="38" y="92" width="244" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -381,9 +437,30 @@
             </objects>
             <point key="canvasLocation" x="-193" y="-320"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lbZ-d8-Zo8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5LM-FC-OaF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rk3-YX-AS3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OeJ-UJ-uVU" kind="relationship" relationship="rootViewController" id="wmi-6T-q5m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kvf-5C-dgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1520" y="1053"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rTU-oA-jbZ"/>
-        <segue reference="BR3-w1-T8n"/>
+        <segue reference="2uy-60-swf"/>
+        <segue reference="jWR-UB-nDy"/>
+        <segue reference="vqG-DS-JsR"/>
+        <segue reference="hjp-ZG-EQR"/>
     </inferredMetricsTieBreakers>
 </document>

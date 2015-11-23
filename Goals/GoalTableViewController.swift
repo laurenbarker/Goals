@@ -168,8 +168,25 @@ class GoalTableViewController: UITableViewController {
                 UIControl().sendAction(Selector("suspend"), to: UIApplication.sharedApplication(), forEvent: nil)
             }
             
-            
-            
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        let name = "GoalView"
+        
+        // The UA-XXXXX-Y tracker ID is loaded automatically from the
+        // GoogleService-Info.plist by the `GGLContext` in the AppDelegate.
+        // If you're copying this to an app just using Analytics, you'll
+        // need to configure your tracking ID here.
+        // [START screen_view_hit_swift]
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: name)
+        
+        let eventTracker: NSObject = GAIDictionaryBuilder.createScreenView().build()
+        tracker.send(eventTracker as! [NSObject : AnyObject])
+        // [END screen_view_hit_swift]
     }
     
 }

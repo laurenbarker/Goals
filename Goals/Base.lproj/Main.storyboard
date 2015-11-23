@@ -336,6 +336,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcO-hK-3Wc">
                                 <rect key="frame" x="129" y="215" width="63" height="30"/>
                                 <state key="normal" title="Analytics"/>
+                                <connections>
+                                    <segue destination="WYL-zw-HBP" kind="show" id="IBC-sz-Ctl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2N-Wo-gwU">
                                 <rect key="frame" x="131" y="269" width="59" height="30"/>
@@ -361,6 +364,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBR-Gy-6A5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1977" y="1053"/>
+        </scene>
+        <!--Analytics-->
+        <scene sceneID="kH7-JV-EC4">
+            <objects>
+                <viewController storyboardIdentifier="AnalyticsViewController" id="WYL-zw-HBP" customClass="AnalyticsViewController" customModule="Goals" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vgP-oe-ctP"/>
+                        <viewControllerLayoutGuide type="bottom" id="s32-0O-33K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W5O-Md-WFp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Analytics" id="7yb-iG-Ywf"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBu-40-hsv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2861" y="396"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OxK-sF-VWY">
@@ -392,8 +415,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjm-Gj-PI4">
-                                <rect key="frame" x="38" y="92" width="244" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Collecting location information..." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjm-Gj-PI4">
+                                <rect key="frame" x="35" y="92" width="247" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -456,11 +479,31 @@
             </objects>
             <point key="canvasLocation" x="1520" y="1053"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="002-f9-Yyg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yP4-2l-m0a" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hd5-LU-XIZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WYL-zw-HBP" kind="relationship" relationship="rootViewController" id="pvH-1J-VKS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sGl-vu-cZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2409" y="396"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2uy-60-swf"/>
-        <segue reference="jWR-UB-nDy"/>
-        <segue reference="vqG-DS-JsR"/>
+        <segue reference="1Ke-wU-UJp"/>
         <segue reference="hjp-ZG-EQR"/>
+        <segue reference="jWR-UB-nDy"/>
+        <segue reference="BR3-w1-T8n"/>
+        <segue reference="pvH-1J-VKS"/>
     </inferredMetricsTieBreakers>
 </document>

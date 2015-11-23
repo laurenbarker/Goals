@@ -54,6 +54,7 @@ class AnalyticsViewController: UIViewController {
                     
                 }
             } catch {
+                self.firstEvent.text = error as? String
                 print(error)
             }
         }

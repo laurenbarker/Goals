@@ -18,6 +18,10 @@
 		01F219FF1BF551D80009E5C8 /* GoalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F219FE1BF551D80009E5C8 /* GoalTableViewCell.swift */; };
 		01F21A011BF55B0B0009E5C8 /* GoalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F21A001BF55B0B0009E5C8 /* GoalTableViewController.swift */; };
 		01F21A031BF967250009E5C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F21A021BF967250009E5C8 /* ViewController.swift */; };
+		3909F8911C032497002CF9C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3909F8901C032497002CF9C7 /* GoogleService-Info.plist */; };
+		3909F8921C03249C002CF9C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3909F8901C032497002CF9C7 /* GoogleService-Info.plist */; };
+		3909F8931C03249D002CF9C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3909F8901C032497002CF9C7 /* GoogleService-Info.plist */; };
+		85643C35B95631FD41FC4AEE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A887A2D37FBD5F2BD31516 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,11 @@
 		01F219FE1BF551D80009E5C8 /* GoalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewCell.swift; sourceTree = "<group>"; };
 		01F21A001BF55B0B0009E5C8 /* GoalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalTableViewController.swift; sourceTree = "<group>"; };
 		01F21A021BF967250009E5C8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		27A887A2D37FBD5F2BD31516 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3909F88F1C031D67002CF9C7 /* Goals-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Goals-Bridging-Header.h"; sourceTree = "<group>"; };
+		3909F8901C032497002CF9C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6D8E347DDBED9C43CA81CE40 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EC5151B42C7824F4C5C8F112 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85643C35B95631FD41FC4AEE /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,10 +95,14 @@
 		01F219BF1BF4EB190009E5C8 = {
 			isa = PBXGroup;
 			children = (
+				3909F8901C032497002CF9C7 /* GoogleService-Info.plist */,
+				3909F88F1C031D67002CF9C7 /* Goals-Bridging-Header.h */,
 				01F219CA1BF4EB190009E5C8 /* Goals */,
 				01F219E21BF4EB190009E5C8 /* GoalsTests */,
 				01F219ED1BF4EB190009E5C8 /* GoalsUITests */,
 				01F219C91BF4EB190009E5C8 /* Products */,
+				0632B125B968E7B57A627996 /* Pods */,
+				2C79967F33DAE0C72FFA6D5F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +151,23 @@
 			path = GoalsUITests;
 			sourceTree = "<group>";
 		};
+		0632B125B968E7B57A627996 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC5151B42C7824F4C5C8F112 /* Pods.debug.xcconfig */,
+				6D8E347DDBED9C43CA81CE40 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2C79967F33DAE0C72FFA6D5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				27A887A2D37FBD5F2BD31516 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01F219F31BF4EB190009E5C8 /* Build configuration list for PBXNativeTarget "Goals" */;
 			buildPhases = (
+				33EFD540F33644AC3851F803 /* Check Pods Manifest.lock */,
 				01F219C41BF4EB190009E5C8 /* Sources */,
 				01F219C51BF4EB190009E5C8 /* Frameworks */,
 				01F219C61BF4EB190009E5C8 /* Resources */,
+				7FC0369768459BD73EC880B2 /* Embed Pods Frameworks */,
+				BFFBD28A550773768F345B1A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,6 +280,7 @@
 			files = (
 				01F219D61BF4EB190009E5C8 /* Assets.xcassets in Resources */,
 				01F219D11BF4EB190009E5C8 /* Main.storyboard in Resources */,
+				3909F8911C032497002CF9C7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3909F8921C03249C002CF9C7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,10 +296,59 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3909F8931C03249D002CF9C7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33EFD540F33644AC3851F803 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7FC0369768459BD73EC880B2 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFFBD28A550773768F345B1A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		01F219C41BF4EB190009E5C8 /* Sources */ = {
@@ -408,23 +493,27 @@
 		};
 		01F219F41BF4EB190009E5C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC5151B42C7824F4C5C8F112 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Goals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.cs4720.Goals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Goals-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		01F219F51BF4EB190009E5C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D8E347DDBED9C43CA81CE40 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Goals/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.virginia.cs.cs4720.Goals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Goals-Bridging-Header.h";
 			};
 			name = Release;
 		};

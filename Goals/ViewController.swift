@@ -68,9 +68,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         );
         
         self.view.addConstraint(rightConstraint);
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -93,9 +93,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 
             }
             else {
-            
-            createNewGoalWithTitle(titleField.text!, goal: Double(goalField.text!)!, unit: unitField.text!, increment: Double(incrementField.text!)!, interval: intervalField.text!)
-            
+                
+                createNewGoalWithTitle(titleField.text!, goal: Double(goalField.text!)!, unit: unitField.text!, increment: Double(incrementField.text!)!, interval: intervalField.text!)
+                
             }}
     }
     
@@ -109,7 +109,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             NSEntityDescription.insertNewObjectForEntityForName("Goals",
                 inManagedObjectContext: managedObjectContext) as! Goals.Goal
             
-        
+            
             
             (newGoal.title, newGoal.goal, newGoal.unit, newGoal.increment, newGoal.interval, newGoal.current) =
                 (title, goal, unit, increment, interval, 0)
@@ -138,7 +138,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func motionEnded(motion: UIEventSubtype,
         withEvent event: UIEvent?) {
             
-            if motion == .MotionShake{ 
+            if motion == .MotionShake{
                 
                 //Comment: to terminate app, do not use exit(0) bc that is logged as a crash.
                 UIControl().sendAction(Selector("suspend"), to: UIApplication.sharedApplication(),
@@ -147,21 +147,43 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        var name = "View1"
+        
+        // The UA-XXXXX-Y tracker ID is loaded automatically from the
+        // GoogleService-Info.plist by the `GGLContext` in the AppDelegate.
+        // If you're copying this to an app just using Analytics, you'll
+        // need to configure your tracking ID here.
+        // [START screen_view_hit_swift]
+        var tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: name)
+        
+        var builder = GAIDictionaryBuilder.createScreenView().build() as! [NSObject : AnyObject]
+        tracker.send(builder)
+        
+//        var builder = GAIDictionaryBuilder.createScreenView()
+//        tracker.send(builder.build() as [NSObject : AnyObject])
+//        // [END screen_view_hit_swift]
+    }
     
-//    let alert = UIAlertController(title: "Incomplete Form", message: "One or more fields in the Goal form are empty. All fields must be complete to save a goal. ", preferredStyle: UIAlertControllerStyle.Alert)
-//    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-//    self.presentViewController(alert, animated: true, completion: nil)
     
     
-
+    //    let alert = UIAlertController(title: "Incomplete Form", message: "One or more fields in the Goal form are empty. All fields must be complete to save a goal. ", preferredStyle: UIAlertControllerStyle.Alert)
+    //    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+    //    self.presentViewController(alert, animated: true, completion: nil)
+    
+    
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

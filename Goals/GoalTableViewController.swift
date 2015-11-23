@@ -24,31 +24,31 @@ class GoalTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = editButtonItem()
         
         goals = loadSampleGoals()
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return goals.count
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "GoalTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GoalTableViewCell
-
+        
         // Configure the cell...
         let goal = goals[indexPath.row]
         cell.goalTitle.text = goal.title + " per " + goal.interval
@@ -58,7 +58,7 @@ class GoalTableViewController: UITableViewController {
         if Double(goal.current.doubleValue) >= Double(goal.goal.doubleValue) {
             cell.backgroundColor = UIColor.greenColor();
         }
-
+        
         return cell
     }
     
@@ -107,7 +107,7 @@ class GoalTableViewController: UITableViewController {
                 print("Unit = \(goal.unit)")
                 print("Increment = \(goal.increment)")
                 print("Interval = \(goal.interval)")
-       
+                
                 goals.append(goal)
             }
             print("Goal count = \(goalCount)")
@@ -116,7 +116,7 @@ class GoalTableViewController: UITableViewController {
             print(error)
             return goals
         }
-
+        
     }
     
     func updateGoal(title: String, action: String) -> [NSNumber] {
@@ -157,7 +157,7 @@ class GoalTableViewController: UITableViewController {
         }
     }
     
-
+    
     override func motionEnded(motion: UIEventSubtype,
         withEvent event: UIEvent?) {
             
@@ -171,5 +171,5 @@ class GoalTableViewController: UITableViewController {
             
             
     }
-
+    
 }

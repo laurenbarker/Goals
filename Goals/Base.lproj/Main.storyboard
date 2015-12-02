@@ -24,13 +24,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdC-wM-8i6">
-                                            <rect key="frame" x="181" y="39" width="42" height="21"/>
+                                            <rect key="frame" x="167" y="39" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yn-ZS-Mcf">
-                                            <rect key="frame" x="47" y="13" width="47" height="21"/>
+                                            <rect key="frame" x="33" y="13" width="47" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="47" id="qfl-ky-jf5"/>
                                             </constraints>
@@ -39,13 +39,14 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFl-3s-bnx">
-                                            <rect key="frame" x="102" y="13" width="42" height="21"/>
+                                            <rect key="frame" x="88" y="13" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumValue="-900000000" maximumValue="900000000" translatesAutoresizingMaskIntoConstraints="NO" id="xZ2-Qu-9iu">
-                                            <rect key="frame" x="47" y="42" width="94" height="29"/>
+                                            <rect key="frame" x="33" y="42" width="94" height="29"/>
+                                            <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="updateValue:" destination="xL3-DH-0vg" eventType="valueChanged" id="78k-PN-LOh"/>
                                             </connections>
@@ -56,7 +57,7 @@
                                         <constraint firstItem="AFl-3s-bnx" firstAttribute="leading" secondItem="3yn-ZS-Mcf" secondAttribute="trailing" constant="8" symbolic="YES" id="Q4I-mP-iu1"/>
                                         <constraint firstItem="EdC-wM-8i6" firstAttribute="centerY" secondItem="zoR-Dh-b7R" secondAttribute="centerY" id="WhI-Ec-H2i"/>
                                         <constraint firstItem="EdC-wM-8i6" firstAttribute="leading" secondItem="xZ2-Qu-9iu" secondAttribute="trailing" constant="40" id="Xkm-Bo-fYb"/>
-                                        <constraint firstItem="3yn-ZS-Mcf" firstAttribute="leading" secondItem="zoR-Dh-b7R" secondAttribute="leadingMargin" constant="39" id="YJ1-Fm-XtE"/>
+                                        <constraint firstItem="3yn-ZS-Mcf" firstAttribute="leading" secondItem="zoR-Dh-b7R" secondAttribute="leadingMargin" constant="25" id="YJ1-Fm-XtE"/>
                                         <constraint firstItem="3yn-ZS-Mcf" firstAttribute="leading" secondItem="xZ2-Qu-9iu" secondAttribute="leading" id="abw-uS-5Ds"/>
                                         <constraint firstItem="xZ2-Qu-9iu" firstAttribute="top" secondItem="3yn-ZS-Mcf" secondAttribute="bottom" constant="8" id="cCF-Me-qmc"/>
                                         <constraint firstItem="3yn-ZS-Mcf" firstAttribute="top" secondItem="zoR-Dh-b7R" secondAttribute="topMargin" constant="5" id="lHe-ho-ybg"/>
@@ -116,7 +117,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="317"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5V-Vw-L9l">
-                                                <rect key="frame" x="27" y="21" width="38" height="21"/>
+                                                <rect key="frame" x="25" y="21" width="40" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -134,7 +135,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Increment:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFJ-lU-aqj">
-                                                <rect key="frame" x="27" y="186" width="87" height="21"/>
+                                                <rect key="frame" x="25" y="186" width="89" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -178,7 +179,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2D-Kx-cmd">
-                                                <rect key="frame" x="27" y="236" width="61" height="21"/>
+                                                <rect key="frame" x="25" y="236" width="61" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -197,7 +198,9 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLD-hC-Aoj">
                                                 <rect key="frame" x="27" y="279" width="59" height="30"/>
-                                                <state key="normal" title="Location"/>
+                                                <state key="normal" title="Location">
+                                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="n7c-lr-DvW" kind="show" id="BR3-w1-T8n"/>
                                                 </connections>
@@ -206,7 +209,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="pMb-Nd-Wys" firstAttribute="top" secondItem="Kny-4e-aJY" secondAttribute="bottom" constant="24" id="0De-w4-8i4"/>
-                                            <constraint firstItem="Y5V-Vw-L9l" firstAttribute="leading" secondItem="Giw-Hx-afd" secondAttribute="leading" constant="27" id="3WS-ZC-pcm"/>
+                                            <constraint firstItem="Y5V-Vw-L9l" firstAttribute="leading" secondItem="Giw-Hx-afd" secondAttribute="leading" constant="25" id="3WS-ZC-pcm"/>
                                             <constraint firstItem="uRe-xB-hPG" firstAttribute="trailing" secondItem="Y5V-Vw-L9l" secondAttribute="trailing" id="4sn-8s-TpJ"/>
                                             <constraint firstItem="k2D-Kx-cmd" firstAttribute="centerY" secondItem="kZ8-vN-Ilh" secondAttribute="centerY" id="59m-iv-gDv"/>
                                             <constraint firstAttribute="trailing" secondItem="Kny-4e-aJY" secondAttribute="trailing" constant="20" symbolic="YES" id="93Z-44-WJN"/>
@@ -214,7 +217,7 @@
                                             <constraint firstItem="Kny-4e-aJY" firstAttribute="leading" secondItem="pMb-Nd-Wys" secondAttribute="leading" id="JHA-Pl-1an"/>
                                             <constraint firstAttribute="trailing" secondItem="cxq-K1-93z" secondAttribute="trailing" constant="20" symbolic="YES" id="LPx-NQ-IXd"/>
                                             <constraint firstItem="k2D-Kx-cmd" firstAttribute="leading" secondItem="Giw-Hx-afd" secondAttribute="leading" constant="27" id="Mvs-uI-vPg"/>
-                                            <constraint firstItem="KFJ-lU-aqj" firstAttribute="leading" secondItem="Giw-Hx-afd" secondAttribute="leading" constant="27" id="NFB-mL-uor"/>
+                                            <constraint firstItem="KFJ-lU-aqj" firstAttribute="leading" secondItem="Giw-Hx-afd" secondAttribute="leading" constant="25" id="NFB-mL-uor"/>
                                             <constraint firstItem="nJs-4D-LFd" firstAttribute="leading" secondItem="uRe-xB-hPG" secondAttribute="leading" id="Otj-Al-QUJ"/>
                                             <constraint firstAttribute="trailing" secondItem="7za-V9-9oi" secondAttribute="trailing" constant="20" symbolic="YES" id="OyJ-Tt-qV1"/>
                                             <constraint firstItem="cxq-K1-93z" firstAttribute="centerY" secondItem="Y5V-Vw-L9l" secondAttribute="centerY" id="PIh-os-4ge"/>
@@ -239,6 +242,11 @@
                                             <constraint firstAttribute="width" constant="280" placeholder="YES" id="w7H-0u-BTf"/>
                                             <constraint firstItem="Kny-4e-aJY" firstAttribute="leading" secondItem="7za-V9-9oi" secondAttribute="leading" id="yuq-wf-rBC"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Mvs-uI-vPg"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -329,21 +337,27 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kty-Di-EBB">
                                 <rect key="frame" x="141" y="155" width="39" height="30"/>
-                                <state key="normal" title="Goals"/>
+                                <state key="normal" title="Goals">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="kc3-eo-e9j" kind="show" id="2uy-60-swf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcO-hK-3Wc">
                                 <rect key="frame" x="129" y="215" width="63" height="30"/>
-                                <state key="normal" title="Analytics"/>
+                                <state key="normal" title="Analytics">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="WYL-zw-HBP" kind="show" id="IBC-sz-Ctl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2N-Wo-gwU">
                                 <rect key="frame" x="131" y="269" width="59" height="30"/>
-                                <state key="normal" title="Location"/>
+                                <state key="normal" title="Location">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="n7c-lr-DvW" kind="show" id="vqG-DS-JsR"/>
                                 </connections>
@@ -432,6 +446,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FU6-if-IuY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -489,6 +507,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Wx-qX-7ek">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -508,6 +530,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rk3-YX-AS3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -527,6 +553,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hd5-LU-XIZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -539,10 +569,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1Ke-wU-UJp"/>
         <segue reference="hjp-ZG-EQR"/>
+        <segue reference="1Ke-wU-UJp"/>
         <segue reference="jWR-UB-nDy"/>
-        <segue reference="BR3-w1-T8n"/>
-        <segue reference="pvH-1J-VKS"/>
+        <segue reference="IBC-sz-Ctl"/>
+        <segue reference="Xxu-dw-g32"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
 </document>

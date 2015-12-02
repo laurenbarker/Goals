@@ -109,7 +109,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcZ-MQ-1Yh">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcZ-MQ-1Yh">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" restorationIdentifier="contentView" translatesAutoresizingMaskIntoConstraints="NO" id="Giw-Hx-afd" userLabel="Content View">
@@ -153,7 +153,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7za-V9-9oi">
                                                 <rect key="frame" x="113" y="73" width="147" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="TP4-8d-8Hb" id="Mbf-Hi-Nqo"/>
                                                 </connections>
@@ -190,7 +190,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="TP4-8d-8Hb" id="WXY-iu-8Lm"/>
                                                 </connections>
@@ -301,11 +301,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="addGoal" destination="cOv-eS-QEB" id="BZ6-Pk-0dT"/>
-                        <outlet property="bottomConstraint" destination="3Pd-6W-FXu" id="xU3-Oy-ZVB"/>
+                        <outlet property="bottomConstraint" destination="3Pd-6W-FXu" id="z2E-Os-qyM"/>
                         <outlet property="contentView" destination="Giw-Hx-afd" id="0AA-Zs-tQa"/>
                         <outlet property="goalField" destination="7za-V9-9oi" id="mkr-yM-Xzo"/>
                         <outlet property="incrementField" destination="pMb-Nd-Wys" id="ffU-6x-L7D"/>
                         <outlet property="intervalField" destination="kZ8-vN-Ilh" id="avE-3U-v0I"/>
+                        <outlet property="scrollView" destination="UcZ-MQ-1Yh" id="SAg-uo-bSP"/>
                         <outlet property="titleField" destination="cxq-K1-93z" id="sUB-ZV-bZi"/>
                         <outlet property="unitField" destination="Kny-4e-aJY" id="ag4-Ig-gIl"/>
                     </connections>

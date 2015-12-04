@@ -513,30 +513,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track current location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sie-rN-cQc">
-                                <rect key="frame" x="35" y="194" width="168" height="32"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="* this will trigger a Goal log reminder when leaving the location shown above" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MIT-eM-5Mi">
-                                <rect key="frame" x="35" y="234" width="240" height="72"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lxi-Ko-dpN">
-                                <rect key="frame" x="233" y="201" width="51" height="31"/>
-                                <animations/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" button="YES" adjustable="YES" allowsDirectInteraction="YES"/>
-                                </accessibility>
-                                <connections>
-                                    <action selector="saveSwitchPressed:" destination="n7c-lr-DvW" eventType="valueChanged" id="jTz-h0-RnX"/>
-                                </connections>
-                            </switch>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -553,9 +529,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="address" destination="xjm-Gj-PI4" id="7kG-No-8R3"/>
-                        <outlet property="gps_bool" destination="lxi-Ko-dpN" id="fPD-0m-Got"/>
-                        <outlet property="label1" destination="Sie-rN-cQc" id="sr8-c8-76R"/>
-                        <outlet property="label2" destination="MIT-eM-5Mi" id="tRG-eS-bHl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebs-f6-Gnd" userLabel="First Responder" sceneMemberID="firstResponder"/>

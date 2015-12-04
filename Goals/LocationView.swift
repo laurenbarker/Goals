@@ -14,26 +14,145 @@ class LocationView: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var titleView: UILabel!
+    @IBOutlet weak var gps_bool: UISwitch!
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UITextView!
     
-    var locationManager: CLLocationManager?
+    @IBAction func saveSwitchPressed(sender: AnyObject) {
+    
+        NSUserDefaults.standardUserDefaults().setBool(gps_bool.on, forKey: switchKey)
+
+    
+    }
+    
+    var window: UIWindow?
+    var locationManager: CLLocationManager!
+    var seenError : Bool = false
+    var locationFixAchieved : Bool = false
+    var locationStatus : NSString = "Not Started"
+
+
+    
+    var switchState = true
+    let switchKey = "switchState"
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+//    @IBAction func saveSwitchPressed(sender:AnyObject) {
+////        if self.gps_bool.on {
+////            self.switchState = true
+////            NSUserDefaults.standardUserDefaults().setBool(self.switchState, forKey: switchKey)
+////            NSUserDefaults.standardUserDefaults().synchronize()
+////            print(NSUserDefaults.standardUserDefaults().boolForKey(switchKey))
+////        } else {
+////            self.switchState = false
+////            NSUserDefaults.standardUserDefaults().setBool(self.switchState, forKey: switchKey)
+////            NSUserDefaults.standardUserDefaults().synchronize()
+////            print(NSUserDefaults.standardUserDefaults().boolForKey(switchKey))
+////        }
+//        
+//        NSUserDefaults.standardUserDefaults().setBool(gps_bool.on, forKey: switchKey)
+//
+//    }
+    
+    @IBAction func resetClicked(sender: AnyObject) {
+        gps_bool.setOn(false, animated: true);}
+    
+    
+//    @IBAction func gps_bool(sender: UIButton) {
+//        if gps_bool.on {
+//            print("Switch is on")
+//            gps_bool.setOn(false, animated:true)
+//
+//        } else {
+//            print("Switch is off")
+//            gps_bool.setOn(true, animated:true)
+//        }
+//    }
+//    
+//    func stateChanged(switchState: UISwitch) {
+//        if switchState.on {
+//            print("Switch is on")
+////            gps_bool.setOn(false, animated:true)
+//
+//        } else {
+//            print("Switch is off")
+////            gps_bool.setOn(true, animated:true)
+//        }
+//    }
+    
+    
+    
+    
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+        initLocationManager();
+        return true
+    } //SO
+
+    func initLocationManager() {
+        seenError = false
+        locationFixAchieved = false
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        locationManager.requestAlwaysAuthorization()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        self.restoreSwitchesStates();
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "saveSwitchesStates", name: "kSaveSwitchesStatesNotification", object: nil);
+
+        
+//        gps_bool.addTarget(self, action: Selector("stateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    func saveSwitchesStates() {
+        NSUserDefaults.standardUserDefaults().setBool(gps_bool!.on, forKey: "gps_bool");
+     
+        
+        NSUserDefaults.standardUserDefaults().synchronize();
     }
     
+    func restoreSwitchesStates() {
+        gps_bool!.on = NSUserDefaults.standardUserDefaults().boolForKey("gps_bool");
+        
+    }
+
+    
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        
+        if gps_bool.on{
+        
+        
+            let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        
+        }
+        
+        if (locationFixAchieved == false) {
+            locationFixAchieved = true
+            let locationArray = locations as NSArray
+            let locationObj = locationArray.lastObject as! CLLocation
+            let coord = locationObj.coordinate
+            
+            print(coord.latitude)
+            print(coord.longitude)
+        }//SO
         
         if locations.count == 0{
             //handle error here
             return
         }
+        
+        
         
         let newLocation = locations[0]
         
@@ -79,6 +198,30 @@ class LocationView: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager,
         didChangeAuthorizationStatus status: CLAuthorizationStatus){
             
+            
+            var shouldIAllow = false
+            
+            switch status {
+            case CLAuthorizationStatus.Restricted:
+                locationStatus = "Restricted Access to location"
+            case CLAuthorizationStatus.Denied:
+                locationStatus = "User denied access to location"
+            case CLAuthorizationStatus.NotDetermined:
+                locationStatus = "Status not determined"
+            default:
+                locationStatus = "Allowed to location Access"
+                shouldIAllow = true
+            }
+            NSNotificationCenter.defaultCenter().postNotificationName("LabelHasbeenUpdated", object: nil)
+            if (shouldIAllow == true) {
+                NSLog("Location to Allowed")
+                // Start location services
+                locationManager.startUpdatingLocation()
+            } else {
+                NSLog("Denied access: \(locationStatus)")
+            } //SOwerflow
+    
+            
             print("The authorization status of location services is changed to: ", terminator: "")
             
             switch CLLocationManager.authorizationStatus(){
@@ -100,6 +243,9 @@ class LocationView: UIViewController, CLLocationManagerDelegate {
         return true;
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.gps_bool.on = NSUserDefaults.standardUserDefaults().boolForKey(switchKey)
+    }
     
     override func viewWillDisappear(animated: Bool) {
         self.resignFirstResponder()
